@@ -26,4 +26,9 @@ Schedule::command('app:replay-info-grabber')
   ->runInBackground()
   ->sendOutputTo(storage_path('app/cron/replay-info-grabber/' . $startTime->timestamp . '__' . $startTime->utcOffset($utcOffset)->format('d-m-Y_H-i-s') . '.log'));
 
-cleanupLogs('replay-info-grabber');
+Schedule::command('app:replay-controller-saver')
+  ->everyMinute()
+  ->runInBackground()
+  ->sendOutputTo(storage_path('app/cron/replay-controller-saver/' . $startTime->timestamp . '__' . $startTime->utcOffset($utcOffset)->format('d-m-Y_H-i-s') . '.log'));
+
+cleanupLogs('replay-controller-saver');
