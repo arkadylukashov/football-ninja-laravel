@@ -42,6 +42,12 @@ return [
       'throw' => false,
     ],
 
+    'hub' => [
+      'driver' => 'local',
+      'root' => storage_path('hub'),
+      'throw' => false,
+    ],
+
     'public' => [
       'driver' => 'local',
       'root' => storage_path('app/public'),
