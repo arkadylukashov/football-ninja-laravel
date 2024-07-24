@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ -z "$1" ]; then
-        echo "Source directory needed"
-        exit 1
-fi
+#if [ -z "$1" ]; then
+#        echo "Source directory needed"
+#        exit 1
+#fi
 
-dir=$(readlink -f $1)
+dir=$(readlink -f .)
 echo "Directory $dir"
 
 cd $dir
